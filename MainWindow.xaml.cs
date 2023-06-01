@@ -20,9 +20,25 @@ namespace ACOfferMaker
     /// </summary>
     public partial class MainWindow : Window
     {
+        // create an empty list of clients
+        List<Client> clients = new List<Client>();
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            // creating new instance of class DataAccess
+            DataAccess db = new DataAccess();
+            
+            // populate empty list with searching result from method GetClients
+            clients = db.GetClients(lastNameTextBox.Text);
+
+            clientFoundListBox.ItemsSource = clients;
+            clientFoundListBox.DisplayMemberPath = "FullInfo";
+
         }
     }
 }
