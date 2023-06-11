@@ -6,16 +6,10 @@ using System.Threading.Tasks;
 
 namespace ACOfferMaker
 {
-    // Create class that model our data from Database  table: Client
-    internal class Client
+    // To add some additional properties to class that was created by LINQTOSQL we need use PARTIAL in class definition
+    public partial class Client
     {
-        public int Id { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string Email {get; set; }
-        public string PhoneNumber { get; set; }
-        // property that return a client as string:  "Kamil Dedio (dedkam@gmail.com)"
-        // there is no need to set up this property - only get
+        //add extra properties to show more info in listbox
         public string FullInfo 
         {
             get
@@ -23,5 +17,8 @@ namespace ACOfferMaker
                 return $"{FirstName} {LastName} ({Email})";
             }
         }
+
+        //add property to store a query result
+        public List<Client> ClientQueryResult { get; set; }
     }
 }

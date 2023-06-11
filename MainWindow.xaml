@@ -3,14 +3,41 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ACOfferMaker"
+        xmlns:local="clr-namespace:ACOfferMaker" d:DataContext="{d:DesignInstance Type=local:DeviceSet}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox Name ="clientFoundListBox" Margin="25,45,428,305" />
-        <TextBox Name ="lastNameTextBox" HorizontalAlignment="Left" Margin="93,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Name="lastNameLabel" Content="Last Name" HorizontalAlignment="Left" Margin="22,14,0,0" VerticalAlignment="Top"/>
-        <Button Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="250,17,0,0" VerticalAlignment="Top" Width="76" Click="searchButton_Click"/>
+        Title="MainWindow" Height="476" Width="601">
+    <StackPanel>
 
-    </Grid>
+        <Label FontSize="32"  Content="NEW OFFER CREATOR" HorizontalAlignment="Center" VerticalAlignment="Top" Height="57" Width="331"/>
+        <Grid>
+            <Label FontWeight="Bold" Content="CLIENT:" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top"/>
+            <Button Name="chooseClientButton" Content="Select Client" HorizontalAlignment="Left" Margin="63,6,0,0" VerticalAlignment="Top" Width="76" Click="searchButton_Click"/>
+        </Grid>
+
+        <Grid Height="50" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Last Name:" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="First Name:" Grid.Row="0" Grid.Column="1"/>
+            <Label Content="Email:" Grid.Row="0" Grid.Column="2"/>
+            <Label Content="Phone:" Grid.Row="0" Grid.Column="3"/>
+            <TextBox IsReadOnly="True" Name="lastNameTextBox" Grid.Row="1" Grid.Column="0" Background="Aqua"/>
+            <TextBox IsReadOnly="True" Name="firstNameTextBox" Grid.Row="1" Grid.Column="1" Background="Aqua"/>
+            <TextBox IsReadOnly="True" Name="emailTextBox" Grid.Row="1" Grid.Column="2" Background="Aqua"/>
+            <TextBox IsReadOnly="True" Name="phoneTextBox" Grid.Row="1" Grid.Column="3" Background="Aqua"/>
+        </Grid>
+        <Grid Margin="5">
+            <Label FontWeight="Bold" Content="DEVICE:" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top"/>
+            <Button Name="chooseDeviceButton" Content="Add Device" HorizontalAlignment="Left" Margin="63,6,0,0" VerticalAlignment="Top" Width="76" Click="addDeviceButton_Click"/>
+        </Grid>
+        <ListBox Name="DeviceSetListBox"  Width="600" Height="100" />
+    </StackPanel>
 </Window>
