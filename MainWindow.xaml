@@ -39,5 +39,6 @@
             <Button Name="chooseDeviceButton" Content="Add Device" HorizontalAlignment="Left" Margin="63,6,0,0" VerticalAlignment="Top" Width="76" Click="addDeviceButton_Click"/>
         </Grid>
         <ListBox Name="DeviceSetListBox"  Width="600" Height="100" />
+        <Button Margin="5" Name="CreatePDF" Width="600" Height="30" Content="CREATE OFFER PDF" Click="CreatePDF_Click" />
     </StackPanel>
 </Window>

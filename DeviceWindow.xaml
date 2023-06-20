@@ -1,0 +1,53 @@
+﻿<Window x:Class="ACOfferMaker.DeviceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ACOfferMaker"
+        mc:Ignorable="d"
+        Title="DeviceWindow" Height="450" Width="600">
+    <StackPanel>
+        <Label Content="ADD DEVICE TO OFFER" HorizontalAlignment="Center" FontSize="24" />
+        <StackPanel Orientation="Horizontal">
+            <StackPanel>
+                <Label>Producer:</Label>
+                <ListBox Name="ProducerListBox" Width="100" Height="100" SelectionChanged="ProducerListBox_SelectionChange" />
+            </StackPanel>
+            <StackPanel>
+                <Label>Type:</Label>
+                <ListBox Name="TypeListBox" Width="100" Height="100" SelectionChanged="TypeListBox_SelectionChanged" />
+            </StackPanel>
+            <StackPanel>
+                <Label>Model Group</Label>
+                <ListBox Name="ModelGroupListBox" Width="100" Height="100" SelectionChanged="ModelGroupListBox_SelectionChanged" />
+             
+            </StackPanel>
+            <StackPanel>
+                <Label>Full Name</Label>
+                <ListBox Name="ModelFullNameListBox" Width="200" Height="100" SelectionChanged="ModelFullNameListBox_SelectionChanged" />
+            </StackPanel>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="10">
+                <Label HorizontalAlignment="Left" Width="150">Model:</Label>
+                <TextBox Name="FullModelName"  HorizontalAlignment="Left" Width="150"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <Label HorizontalAlignment="Left" Width="100">Catalogue price:</Label>
+                <TextBox Name="CatalougePrice" HorizontalAlignment="Left" Width="100" />
+            </StackPanel>
+            <StackPanel Margin="10">
+                <Label HorizontalAlignment="Left" Width="70">Offer Price:</Label>
+                <TextBox Name="FinalPriceTextBox" HorizontalAlignment="Left" Width="70" />
+            </StackPanel>
+            <StackPanel Margin="10">
+                <Label HorizontalAlignment="Left" Width="70">VAT:</Label>
+                <CheckBox Name ="Vat8" IsChecked="true" Content="8%" HorizontalAlignment="Left" Width="70" />
+                <CheckBox Name ="Vat23" Content="23%" HorizontalAlignment="Left" Width="70" />
+            </StackPanel>
+            <Button Height="50" Width="100" Click="AddToOfferButton_Click">Add to Offer</Button>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
